@@ -123,3 +123,16 @@ Person getEmployee(@PathParam Long dept, @QueryParam Long id)
 ```
 
 Since params names as same as var names.
+
+## Prefer to use "filter / map / reduce" approach
+
+```
+List<String> names = Arrays.asList("Smith", "Adams", "Crawford"); 
+List<Person> people = peopleDAO.find("London"); 
+  
+// Using anyMatch and method reference 
+List<Person> anyMatch = people.stream().filter(p -> (names.stream().anyMatch(p.name::contains))).collect(Collectors.toList()); 
+  
+// Using reduce 
+List<Person> reduced = people.stream().filter(p -> names.stream().reduce(false (Boolean b, String keyword) -> b || p.name.contains(keyword), (l, r) -> l | r)).collect(Collectors.toList()); 
+```
