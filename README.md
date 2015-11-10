@@ -93,3 +93,33 @@ private static void printNames(List persons, Predicate predicate) {
         }
 }
 ```
+
+# Use Parallel sorting
+
+Instead of 
+
+```
+Array.sort(myArray);
+```
+
+Use...
+
+```
+Arrays.parallelSort(myArray);
+```
+
+# Depend on parameter reflection
+
+Instead of...
+
+```
+Person getEmployee(@PathParam("dept") Long dept, @QueryParam("id") Long id)
+```
+
+Do...
+
+```
+Person getEmployee(@PathParam Long dept, @QueryParam Long id)
+```
+
+Since params names as same as var names.
