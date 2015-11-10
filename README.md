@@ -82,7 +82,7 @@ interface InterfaceA {
 }
 ```
 
-# Prefer Streams to reduce code.
+## Prefer Streams to reduce code.
 
 ```
 private static void printNames(List persons, Predicate predicate) {
@@ -94,7 +94,7 @@ private static void printNames(List persons, Predicate predicate) {
 }
 ```
 
-# Use Parallel sorting
+## Use Parallel sorting
 
 Instead of 
 
@@ -108,7 +108,7 @@ Use...
 Arrays.parallelSort(myArray);
 ```
 
-# Depend on parameter reflection
+## Depend on parameter reflection
 
 Instead of...
 
