@@ -81,3 +81,15 @@ interface InterfaceA {
  
 }
 ```
+
+# Prefer Streams to reduce code.
+
+```
+private static void printNames(List persons, Predicate predicate) {
+            persons.stream()
+                    .filter(predicate)
+                    .map(p -> p.getName())
+                    .forEach(name -> System.out.println(name));
+        }
+}
+```
