@@ -3,7 +3,6 @@
 A code review guide and checklist when working with Java and related technologies. The following should really help when writing new code in Java applications after upgrading to Java 8 or refactoring code that is < Java8
 
 # Core Java 
-The following should 
 
 ## Prefer Lambdas
 
@@ -135,4 +134,14 @@ List<Person> anyMatch = people.stream().filter(p -> (names.stream().anyMatch(p.n
   
 // Using reduce 
 List<Person> reduced = people.stream().filter(p -> names.stream().reduce(false (Boolean b, String keyword) -> b || p.name.contains(keyword), (l, r) -> l | r)).collect(Collectors.toList()); 
+```
+
+# Use new data-time api
+
+```
+Clock clock = Clock.systemUTC(); //return the current time based on your system clock and set to UTC. 
+
+Clock clock = Clock.systemDefaultZone(); //return time based on system clock zone 
+
+long time = clock.millis(); //time in milliseconds from January 1st, 1970
 ```
